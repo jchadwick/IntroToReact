@@ -52,16 +52,14 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
 .contactsList .list-group-item img {
-  --imgSize: 40px;
+  --imgSize: 2rem;
   width: var(--imgSize);
   height: var(--imgSize);
-  margin-right: calc(var(--imgSize) / 2);
+  margin-right: calc(var(--imgSize) / 3);
   border-radius: calc(var(--imgSize) / 2);
   object-fit: cover;
 }
-
 .contactsList .list-group-item div {
   flex-grow: 1;
   font-size: 110%;
@@ -73,16 +71,26 @@ body {
 }
 .contactDetails .displayName {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1em;
 }
 .contactDetails label {
   font-size: 110%;
   font-weight: 600;
-  width: 8rem;
+  width: 8em;
   text-align: right;
   margin-right: 0.5rem;
 }
 .contactDetails .avatar {
   float: right;
   width: 30%;
+}
+
+/** small screen settings **/
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 0.7rem;
+  }
+  .contactsList .list-group-item {
+    padding: 0.4rem 0.6rem;
+  }
 }
