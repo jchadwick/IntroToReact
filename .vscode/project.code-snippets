@@ -1,0 +1,15 @@
+{
+  // Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  "React Imports": {
+    "scope": "html",
+    "prefix": "react-imports",
+    "body": [
+      "<script src='https://unpkg.com/react@16/umd/react.development.js' crossorigin></script>",
+      "<script src='https://unpkg.com/react-dom@16/umd/react-dom.development.js' crossorigin></script>",
+      "<script src='https://unpkg.com/babel-standalone@6/babel.min.js' crossorigin></script>"
+    ],
+    "description": "React HTML Imports"
+  }
+}
