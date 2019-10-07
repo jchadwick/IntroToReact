@@ -2,9 +2,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 body {
+  background-color: rgb(223, 230, 247);
+}
+
+#app {
   max-width: 80%;
+  min-height: 15em;
   margin: 1rem auto;
+  border-radius: 1em;
   font-family: "Roboto", "Open Sans", sans-serif;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contactsPage {
