@@ -2,14 +2,69 @@
   // Possible variables are:
   // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
   // Placeholders with the same ids are connected.
-  "React Imports": {
+  "React HTML Imports": {
     "scope": "html",
     "prefix": "react-imports",
     "body": [
+      "<!-- container that will hold the rendered application -->",
+      "<div id='app' />",
+      "",
+      "<!-- React libraries -->",
       "<script src='https://unpkg.com/react@16/umd/react.development.js' crossorigin></script>",
       "<script src='https://unpkg.com/react-dom@16/umd/react-dom.development.js' crossorigin></script>",
-      "<script src='https://unpkg.com/babel-standalone@6/babel.min.js' crossorigin></script>"
+      "",
+      "<!-- FOR DEMO ONLY: run Babel in the browser to compile JSX syntax -->",
+      "<script src='https://unpkg.com/babel-standalone@6/babel.min.js' crossorigin></script>",
+      "",
+      "<!-- Our application code -->",
+      "<script src='./index.js' type='text/babel'></script>"
     ],
-    "description": "React HTML Imports"
+    "description": "React HTML Imports (run in <body> element)"
+  },
+  "Initial ReactDOM render": {
+    "scope": "javascript",
+    "prefix": "react-dom-render-app",
+    "body": ["ReactDOM.render(<App />, document.getElementById('app'));"],
+    "description": "Render initial React element"
+  },
+  "React Component Function": {
+    "scope": "javascript, typescript",
+    "prefix": "react-component-function",
+    "body": [
+      "const ${1:Component} = (${2:props}) => {",
+      "  return <div>$0</div>;",
+      "};",
+      ""
+    ],
+    "description": "A template for a React function component"
+  },
+  "React Component Function (view only)": {
+    "scope": "javascript, typescript",
+    "prefix": "react-simple-component-function",
+    "body": ["const ${1:Component} = (${2:props}) => <div>$0</div>;"],
+    "description": "A template for a simple React function component"
+  },
+  "Format Phone Number": {
+    "scope": "javascript",
+    "prefix": "format-phone-number",
+    "body": ".replace(/\\D+/g, '').replace(/(\\d{3})(\\d{3})(\\d{4})/, '(\\$1) \\$2-\\$3')",
+    "description": "Formats a phone number variable"
+  },
+  "React Keypress Handler": {
+    "scope": "javascript",
+    "prefix": "react-keypress",
+    "body": [
+      "React.useEffect(() => {",
+      "  function keyHandler({ key }) {",
+      "    console.debug(`keypress: `, key);",
+      "  }",
+      "  ",
+      "  window.addEventListener(\"keyup\", keyHandler);",
+      "  ",
+      "  return () => {",
+      "    window.removeEventListener(\"keyup\", keyHandler);",
+      "  };",
+      "}, []);"
+    ]
   }
 }

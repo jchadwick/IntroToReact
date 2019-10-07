@@ -2,19 +2,17 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 body {
-  background-color: rgb(223, 230, 247);
+  background-color: rgb(133, 133, 133);
 }
 
 #app {
   max-width: 80%;
   min-height: 15em;
-  margin: 1rem auto;
+  margin: 4rem auto;
   border-radius: 1em;
   font-family: "Roboto", "Open Sans", sans-serif;
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem;
 }
 
 .contactsPage {
@@ -27,6 +25,7 @@ body {
   grid-template-areas:
     "searchBar    searchBar"
     "contactsList contactDetails";
+  grid-template-rows: 3rem auto;
   grid-template-columns: 30% 70%;
 }
 
@@ -40,6 +39,9 @@ body {
 .contactsList {
   grid-area: contactsList;
   display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
 .contactsList .list-group {
   flex-grow: 1;
@@ -67,27 +69,20 @@ body {
 
 .contactDetails {
   grid-area: contactDetails;
-  display: flex;
   padding: 1rem 0;
 }
 .contactDetails .displayName {
   text-align: center;
+  margin-bottom: 3rem;
 }
-.contactDetails .details {
-  flex-grow: 1;
-}
-.contactDetails .details fieldset {
-  margin-top: 2rem;
-}
-.contactDetails .details label {
+.contactDetails label {
   font-size: 110%;
   font-weight: 600;
   width: 8rem;
   text-align: right;
   margin-right: 0.5rem;
 }
-.contactDetails img {
-  --imgWidth: 14rem;
-  min-width: var(--imgWidth);
-  max-width: var(--imgWidth);
+.contactDetails .avatar {
+  float: right;
+  width: 30%;
 }
