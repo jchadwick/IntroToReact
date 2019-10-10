@@ -24,7 +24,9 @@
   "Initial ReactDOM render": {
     "scope": "javascript",
     "prefix": "react-dom-render-app",
-    "body": ["ReactDOM.render(<App />, document.getElementById('app'));"],
+    "body": [
+      "ReactDOM.render(React.createElement(App), document.getElementById('app'));"
+    ],
     "description": "Render initial React element"
   },
   "React Component Function": {
@@ -49,6 +51,11 @@
     "prefix": "format-phone-number",
     "body": ".replace(/\\D+/g, '').replace(/(\\d{3})(\\d{3})(\\d{4})/, '(\\$1) \\$2-\\$3')",
     "description": "Formats a phone number variable"
+  },
+  "React useEffect": {
+    "scope": "javascript",
+    "prefix": "react-useEffect",
+    "body": ["React.useEffect(() => {", "  // return () => { };", "}, []);"]
   },
   "React Keypress Handler": {
     "scope": "javascript",
