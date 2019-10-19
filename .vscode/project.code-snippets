@@ -7,7 +7,7 @@
     "prefix": "react-imports",
     "body": [
       "<!-- container that will hold the rendered application -->",
-      "<div id='app' />",
+      "<div id='app'></div>",
       "",
       "<!-- React libraries -->",
       "<script src='https://unpkg.com/react@16/umd/react.development.js' crossorigin></script>",
